@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    actor U as Uploader
+    participant D as Dashboard
+    participant A as Lambda API
+    participant S as S3
+    participant Q as SQS
+    participant P as Lambda Pipeline
+    participant G as Gemini
+    participant DB as DynamoDB
+
+    U->>D: pilih video, isi judul, pilih peran
+    D->>A: POST /uploads (judul, peran)
+    A->>A: validasi token, buat video_id
+    A-->>D: presigned PUT URL + metadata
+    D->>S: PUT video langsung ke S3
+    S-->>D: 200 OK
+    S->>Q: event ObjectCreated
+    Q->>P: kirim pesan (batch 1)
+    P->>S: unduh video, baca metadata
+    P->>DB: ambil / buat template
+    P->>G: transkrip audio dan nilai frame
+    G-->>P: verdict, bukti, timestamp
+    P->>DB: simpan hasil AI (results)
+    P-->>Q: sukses, pesan dihapus
+    D->>A: GET /videos (polling)
+    A->>DB: baca status
+    A-->>D: video siap direview

@@ -1,0 +1,18 @@
+flowchart TD
+    A["Video MP4 dari S3"] --> B["Baca metadata<br/>peran + judul"]
+    B --> C{"Template skenario<br/>sudah ada?"}
+    C -->|ya| E["Muat template<br/>dari DynamoDB"]
+    C -->|tidak| D["Gemini membuat 4 item S-xx<br/>+ gabung aturan universal U-xx"]
+    D --> E
+    E --> F["ffmpeg ekstrak audio mono"]
+    E --> G["ffmpeg ekstrak frame<br/>tiap 5 dtk + ekor video tiap 2 dtk"]
+    F --> H["Gemini ASR<br/>transkrip bertimestamp"]
+    H --> I["Evaluasi Gemini<br/>temperature 0, JSON terstruktur"]
+    G --> I
+    I --> J{"Respons Gemini<br/>sukses dan valid?"}
+    J -->|gagal| K["Retry jika error 503 / 429<br/>jeda 10, 20, 40, 60 dtk"]
+    K --> I
+    J -->|lolos| L["Setiap item:<br/>pass / fail / uncertain<br/>+ bukti + timestamp"]
+    L --> M["Bangun timeline<br/>clear / uncertain / flagged"]
+    M --> N["Ringkasan<br/>needs_attention,<br/>unlocated_item_ids"]
+    N --> O[("Simpan ke DynamoDB results")]

@@ -1,0 +1,15 @@
+flowchart LR
+    subgraph AI["Milik AI"]
+        RES[("results<br/>PrescreenResult<br/>verdict, bukti, timeline,<br/>ringkasan, source")]
+    end
+    subgraph Manusia["Milik manusia"]
+        REV[("reviews<br/>keputusan akhir, override,<br/>catatan, nama reviewer")]
+    end
+    subgraph Bersama["Dipakai bersama"]
+        TPL[("templates<br/>kunci peran#slug-judul<br/>item U-xx dan S-xx, versi")]
+    end
+    TPL -->|"dipakai menilai"| RES
+    RES -->|"dibaca dashboard"| VIEW["Tampilan review"]
+    REV -->|"dibaca dashboard"| VIEW
+    VIEW -->|"override"| REV
+    VIEW -->|"edit checklist<br/>versi naik"| TPL

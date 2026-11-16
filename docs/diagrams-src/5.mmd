@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> uploaded: video masuk S3
+    uploaded --> processing: pipeline mengambil pesan
+    processing --> ai_done: hasil AI tersimpan
+    processing --> failed: error berulang, masuk DLQ
+    failed --> processing: kirim ulang manual
+    ai_done --> approved: reviewer Setujui
+    ai_done --> rejected: reviewer Tolak
+    approved --> rejected: keputusan diubah
+    rejected --> approved: keputusan diubah

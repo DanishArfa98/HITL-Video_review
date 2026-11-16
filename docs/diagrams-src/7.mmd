@@ -1,0 +1,11 @@
+flowchart TD
+    A["Pesan SQS diterima"] --> B["Lambda pipeline"]
+    B --> C{"Berhasil?"}
+    C -->|ya| D["Hapus pesan dari antrean"]
+    C -->|"gagal sebagian batch"| E["Pesan kembali ke antrean<br/>setelah visibility 5400 dtk"]
+    E --> F{"Sudah melewati<br/>batas percobaan?"}
+    F -->|belum| B
+    F -->|sudah| G[("DLQ")]
+    G --> H["Periksa log CloudWatch,<br/>perbaiki, kirim ulang"]
+    B -.error 503 / 429 Gemini.-> I["Retry dalam proses<br/>10 / 20 / 40 / 60 dtk"]
+    I -.-> B

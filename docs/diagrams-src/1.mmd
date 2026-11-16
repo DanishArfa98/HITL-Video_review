@@ -1,0 +1,35 @@
+flowchart LR
+    subgraph Klien["Pengguna"]
+        UP["Uploader<br/>dashboard React"]
+        RV["Reviewer<br/>dashboard React"]
+    end
+    subgraph Hosting["Hosting gratis"]
+        CF["Cloudflare Pages<br/>file statis React"]
+    end
+    subgraph AWS["AWS"]
+        API["Lambda API<br/>FastAPI + Mangum<br/>Function URL"]
+        S3[("S3<br/>uploads/")]
+        SQS[["SQS<br/>antrean"]]
+        DLQ[["DLQ<br/>pesan gagal"]]
+        PIPE["Lambda Pipeline<br/>Python + ffmpeg<br/>container"]
+        T[("DynamoDB<br/>templates")]
+        R[("DynamoDB<br/>results")]
+        V[("DynamoDB<br/>reviews")]
+    end
+    G["Gemini 2.5 Flash<br/>Google AI"]
+
+    CF -.memuat.-> UP
+    CF -.memuat.-> RV
+    UP -->|"1 minta tiket"| API
+    UP -->|"2 PUT video"| S3
+    S3 -->|"3 event"| SQS
+    SQS -->|"4 batch 1"| PIPE
+    SQS -.gagal berulang.-> DLQ
+    PIPE <-->|"audio + frame"| G
+    PIPE <--> T
+    PIPE -->|"5 hasil AI"| R
+    RV <-->|"6 baca / simpan"| API
+    API --> R
+    API <--> V
+    API <--> T
+    API -.presigned GET.-> S3

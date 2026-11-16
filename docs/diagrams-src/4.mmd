@@ -1,0 +1,31 @@
+sequenceDiagram
+    autonumber
+    actor R as Reviewer
+    participant D as Dashboard
+    participant A as Lambda API
+    participant DB as DynamoDB
+    participant S as S3
+
+    R->>D: buka daftar video
+    D->>A: GET /videos
+    A->>DB: baca results + reviews
+    A-->>D: daftar + ringkasan
+    R->>D: pilih satu video
+    D->>A: GET /videos/id
+    A->>DB: hasil AI, review, template
+    A->>S: buat presigned GET
+    A-->>D: data lengkap + URL video
+    D->>R: video, heatmap, checklist
+    loop tiap item bermasalah
+        R->>D: klik item
+        D->>R: lompat ke momen, kecepatan 1x di zona merah
+        R->>D: Setuju AI / Lolos / Gagal + catatan
+    end
+    opt perlu ubah checklist
+        R->>D: tambah, ubah, nonaktifkan, hapus item
+    end
+    R->>D: Setujui atau Tolak
+    D->>A: PUT /videos/id/review
+    A->>A: validasi, terapkan edit template
+    A->>DB: simpan ke reviews dan templates
+    A-->>D: tersimpan
