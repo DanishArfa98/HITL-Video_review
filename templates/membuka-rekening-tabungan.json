@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "membuka-rekening-tabungan",
+  "scenario_title": "Membuka Rekening Tabungan",
+  "template_version": 1,
+  "language": "id",
+  "created_by": "ai",
+  "items": [
+    {
+      "id": "U-01",
+      "source": "universal",
+      "category": "3S",
+      "description": "Teller menerapkan 3S (Senyum, Salam, Sapa) kepada nasabah di awal interaksi",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-02",
+      "source": "universal",
+      "category": "seragam",
+      "description": "Teller memakai seragam kerja profesional (blazer atau seragam bank)",
+      "modalities": [
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-03",
+      "source": "universal",
+      "category": "verifikasi identitas",
+      "description": "Teller meminta dan memverifikasi KTP nasabah sebelum memproses permintaan",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "critical",
+      "enabled": true
+    },
+    {
+      "id": "U-04",
+      "source": "universal",
+      "category": "bahasa",
+      "description": "Teller berbicara dengan nada sopan dan bahasa formal tanpa kata slang",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-05",
+      "source": "universal",
+      "category": "closing",
+      "description": "Teller menutup layanan dengan menawarkan bantuan tambahan kepada nasabah",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-01",
+      "source": "scenario",
+      "category": "Prosedur Pembukaan Rekening",
+      "description": "Teller menjelaskan jenis-jenis rekening tabungan yang tersedia beserta fitur utamanya.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-02",
+      "source": "scenario",
+      "category": "Prosedur Pembukaan Rekening",
+      "description": "Teller menyerahkan formulir pembukaan rekening dan menjelaskan cara pengisiannya.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-03",
+      "source": "scenario",
+      "category": "Prosedur Pembukaan Rekening",
+      "description": "Teller menginformasikan jumlah setoran awal minimum dan opsi setoran lainnya.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-04",
+      "source": "scenario",
+      "category": "Prosedur Pembukaan Rekening",
+      "description": "Teller menyerahkan buku tabungan atau kartu debit dan menjelaskan cara penggunaannya.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-05",
+      "source": "scenario",
+      "category": "akhir video",
+      "description": "Video berakhir bersih setelah closing: aktor tidak keluar karakter (tertawa, bicara di luar skenario, melihat ke kamera) dan tidak ada adegan di luar skenario",
+      "modalities": ["vision", "audio"],
+      "severity": "major",
+      "enabled": true
+    }
+  ]
+}

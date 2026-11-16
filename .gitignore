@@ -1,0 +1,64 @@
+# ===== Rahasia (JANGAN PERNAH di-commit) =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*
+*.local.json
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+.coverage
+htmlcov/
+
+# ===== Node / frontend =====
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+
+# ===== Video, media, dan hasil olahan =====
+*.mp4
+*.webm
+*.mov
+*.mkv
+*.wav
+*.mp3
+frames/
+work/
+tmp/
+out/
+output/
+results/
+hasil/
+
+# ===== Arsip dan paket =====
+*.zip
+*.tar
+*.tar.gz
+
+# ===== Docker / AWS lokal =====
+.aws-sam/
+.terraform/
+*.tfstate*
+
+# ===== Editor & OS =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

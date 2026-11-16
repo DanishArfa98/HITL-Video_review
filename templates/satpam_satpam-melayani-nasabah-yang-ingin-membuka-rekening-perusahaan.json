@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "satpam-melayani-nasabah-yang-ingin-membuka-rekening-perusahaan",
+  "scenario_title": "Satpam melayani nasabah yang ingin membuka rekening perusahaan",
+  "role": "satpam",
+  "template_version": 2,
+  "language": "id",
+  "created_by": "ai",
+  "items": [
+    {
+      "id": "U-01",
+      "source": "universal",
+      "category": "3S",
+      "description": "Petugas menerapkan 3S (Senyum, Salam, Sapa) kepada nasabah di awal interaksi",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-02",
+      "source": "universal",
+      "category": "seragam",
+      "description": "Satpam memakai seragam satpam lengkap dan rapi",
+      "modalities": [
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-04",
+      "source": "universal",
+      "category": "bahasa",
+      "description": "Petugas berbicara dengan nada sopan dan bahasa formal tanpa kata slang",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-05",
+      "source": "universal",
+      "category": "closing",
+      "description": "Satpam menutup interaksi dengan mengarahkan nasabah ke antrean atau Customer Service dan menawarkan bantuan tambahan",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-06",
+      "source": "universal",
+      "category": "akhir video",
+      "description": "Video berakhir bersih setelah closing: aktor tidak keluar karakter (tertawa, bicara di luar skenario, melihat ke kamera) dan tidak ada adegan di luar skenario",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-01",
+      "source": "scenario",
+      "category": "Konfirmasi Tujuan",
+      "description": "Satpam mengonfirmasi tujuan nasabah untuk membuka rekening perusahaan agar dapat memberikan arahan yang tepat.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-02",
+      "source": "scenario",
+      "category": "Verifikasi Janji Temu",
+      "description": "Satpam menanyakan apakah nasabah sudah membawa semua dokumen persyaratan pembukaan rekening perusahaan",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-03",
+      "source": "scenario",
+      "category": "Manajemen Antrean",
+      "description": "Satpam memberikan nomor antrean khusus untuk layanan pembukaan rekening perusahaan, jika sistem antrean berlaku.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-04",
+      "source": "scenario",
+      "category": "Arah dan Panduan",
+      "description": "Satpam mengarahkan nasabah ke area atau meja layanan yang spesifik untuk pembukaan rekening perusahaan.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "critical",
+      "enabled": true
+    },
+    {
+      "id": "S-05",
+      "source": "scenario",
+      "category": "akhir video",
+      "description": "Video berakhir bersih setelah closing: aktor tidak keluar karakter (tertawa, bicara di luar skenario, melihat ke kamera) dan tidak ada adegan di luar skenario",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "satpam-melayani-pemblokiran-kartu-debit-melalui-brimo",
+  "scenario_title": "Satpam melayani pemblokiran kartu debit melalui BRImo",
+  "role": "satpam",
+  "template_version": 1,
+  "language": "id",
+  "created_by": "ai",
+  "items": [
+    {
+      "id": "U-01",
+      "source": "universal",
+      "category": "3S",
+      "description": "Petugas menerapkan 3S (Senyum, Salam, Sapa) kepada nasabah di awal interaksi",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-02",
+      "source": "universal",
+      "category": "seragam",
+      "description": "Satpam memakai seragam satpam lengkap dan rapi",
+      "modalities": [
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-04",
+      "source": "universal",
+      "category": "bahasa",
+      "description": "Petugas berbicara dengan nada sopan dan bahasa formal tanpa kata slang",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-05",
+      "source": "universal",
+      "category": "closing",
+      "description": "Satpam menutup layanan dengan menawarkan bantuan tambahan kepada nasabah",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-06",
+      "source": "universal",
+      "category": "akhir video",
+      "description": "Video berakhir bersih setelah closing: aktor tidak keluar karakter (tertawa, bicara di luar skenario, melihat ke kamera) dan tidak ada adegan di luar skenario",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-01",
+      "source": "scenario",
+      "category": "Prosedur Layanan",
+      "description": "Satpam mengkonfirmasi bahwa nasabah ingin memblokir kartu debit melalui aplikasi BRImo.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-02",
+      "source": "scenario",
+      "category": "Prosedur Layanan",
+      "description": "Satpam memberikan instruksi yang jelas mengenai langkah-langkah pemblokiran kartu debit melalui aplikasi BRImo.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-03",
+      "source": "scenario",
+      "category": "Prosedur Layanan",
+      "description": "Satpam mengarahkan nasabah untuk membuka aplikasi BRImo di perangkat selulernya dan menunjukkan menu yang relevan untuk pemblokiran kartu.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-04",
+      "source": "scenario",
+      "category": "Prosedur Layanan",
+      "description": "Satpam memastikan nasabah memahami instruksi yang diberikan untuk melanjutkan proses pemblokiran kartu.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    }
+  ]
+}

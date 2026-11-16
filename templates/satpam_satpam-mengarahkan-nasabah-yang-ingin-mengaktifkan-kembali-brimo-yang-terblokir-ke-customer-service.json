@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "satpam-mengarahkan-nasabah-yang-ingin-mengaktifkan-kembali-brimo-yang-terblokir-ke-customer-service",
+  "scenario_title": "Satpam mengarahkan nasabah yang ingin mengaktifkan kembali BRImo yang terblokir ke customer service",
+  "role": "satpam",
+  "template_version": 1,
+  "language": "id",
+  "created_by": "ai",
+  "items": [
+    {
+      "id": "U-01",
+      "source": "universal",
+      "category": "3S",
+      "description": "Petugas menerapkan 3S (Senyum, Salam, Sapa) kepada nasabah di awal interaksi",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-02",
+      "source": "universal",
+      "category": "seragam",
+      "description": "Satpam memakai seragam satpam lengkap dan rapi",
+      "modalities": [
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-04",
+      "source": "universal",
+      "category": "bahasa",
+      "description": "Petugas berbicara dengan nada sopan dan bahasa formal tanpa kata slang",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-05",
+      "source": "universal",
+      "category": "closing",
+      "description": "Satpam menutup layanan dengan menawarkan bantuan tambahan kepada nasabah",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-06",
+      "source": "universal",
+      "category": "akhir video",
+      "description": "Video berakhir bersih setelah closing: aktor tidak keluar karakter (tertawa, bicara di luar skenario, melihat ke kamera) dan tidak ada adegan di luar skenario",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-01",
+      "source": "scenario",
+      "category": "Petugas Keamanan",
+      "description": "Satpam menanyakan tujuan atau keperluan nasabah.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-02",
+      "source": "scenario",
+      "category": "Petugas Keamanan",
+      "description": "Satpam menyebutkan secara spesifik bahwa layanan aktivasi BRImo ditangani oleh customer service.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-03",
+      "source": "scenario",
+      "category": "Petugas Keamanan",
+      "description": "Satpam memberikan arahan lokasi customer service dengan jelas.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-04",
+      "source": "scenario",
+      "category": "Petugas Keamanan",
+      "description": "Satpam membantu nasabah mengambil nomor antrean atau menginformasikan cara mengambilnya untuk layanan customer service.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    }
+  ]
+}

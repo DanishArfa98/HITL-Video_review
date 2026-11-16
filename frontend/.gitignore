@@ -1,0 +1,4 @@
+node_modules/
+dist/
+.env
+mock/sample.mp4

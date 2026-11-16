@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "satpam-melayani-nasabah-setor-tunai-ke-rekening-sendiri",
+  "scenario_title": "Satpam melayani nasabah setor tunai ke rekening sendiri",
+  "role": "satpam",
+  "template_version": 1,
+  "language": "id",
+  "created_by": "ai",
+  "items": [
+    {
+      "id": "U-01",
+      "source": "universal",
+      "category": "3S",
+      "description": "Petugas menerapkan 3S (Senyum, Salam, Sapa) kepada nasabah di awal interaksi",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-02",
+      "source": "universal",
+      "category": "seragam",
+      "description": "Satpam memakai seragam satpam lengkap dan rapi",
+      "modalities": [
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-04",
+      "source": "universal",
+      "category": "bahasa",
+      "description": "Petugas berbicara dengan nada sopan dan bahasa formal tanpa kata slang",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-05",
+      "source": "universal",
+      "category": "closing",
+      "description": "Satpam menutup layanan dengan menawarkan bantuan tambahan kepada nasabah",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "U-06",
+      "source": "universal",
+      "category": "akhir video",
+      "description": "Video berakhir bersih setelah closing: aktor tidak keluar karakter (tertawa, bicara di luar skenario, melihat ke kamera) dan tidak ada adegan di luar skenario",
+      "modalities": [
+        "vision",
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-01",
+      "source": "scenario",
+      "category": "Panduan Transaksi",
+      "description": "Satpam mengkonfirmasi jenis transaksi nasabah (setor tunai) dan memberikan petunjuk arah yang jelas menuju mesin setor tunai atau loket yang sesuai.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-02",
+      "source": "scenario",
+      "category": "Persiapan Nasabah",
+      "description": "Satpam mengingatkan nasabah untuk menyiapkan kartu debit/ATM atau informasi lain yang diperlukan sebelum memulai transaksi setor tunai.",
+      "modalities": [
+        "audio"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-03",
+      "source": "scenario",
+      "category": "Bantuan Proaktif",
+      "description": "Satpam mengamati nasabah saat akan memulai transaksi di mesin setor tunai dan menawarkan bantuan jika nasabah terlihat ragu atau kesulitan.",
+      "modalities": [
+        "audio",
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    },
+    {
+      "id": "S-04",
+      "source": "scenario",
+      "category": "Pengaturan Lingkungan",
+      "description": "Satpam memastikan area sekitar mesin setor tunai tertib, tidak terhalang, dan memberikan ruang yang cukup bagi nasabah untuk bertransaksi.",
+      "modalities": [
+        "vision"
+      ],
+      "severity": "major",
+      "enabled": true
+    }
+  ]
+}
